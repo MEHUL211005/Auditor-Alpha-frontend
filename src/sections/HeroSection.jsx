@@ -35,7 +35,7 @@ export default function HeroSection() {
                     </span>
                   </ActionButton>
                   <ActionButton variant="secondary">
-                    <span className="font-['Inter'] font-semibold text-[13px] sm:text-[14px] leading-[21px] tracking-[0px] text-center text-[#FFFFFF]">
+                    <span className="whitespace-nowrap font-['Inter'] font-semibold text-[13px] sm:text-[14px] leading-[21px] tracking-[0px] text-center text-[#FFFFFF]">
                       See How It Works
                     </span>
                   </ActionButton>
