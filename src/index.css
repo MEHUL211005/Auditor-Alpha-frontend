@@ -21,6 +21,23 @@ button {
   cursor: pointer;
 }
 
+.integration-marquee-window {
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 24px,
+    #000 calc(100% - 24px),
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 24px,
+    #000 calc(100% - 24px),
+    transparent
+  );
+}
+
 @keyframes integrations-marquee {
   to {
     transform: translateX(-50%);

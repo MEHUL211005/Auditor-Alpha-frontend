@@ -61,7 +61,7 @@ export default function ROISection() {
                 <span className="font-semibold text-[#FFFFFF]">$5M</span>
               </p>
 
-              <div className="mt-4 sm:mt-[23px] h-[4px] w-full bg-[#1A2438]" />
+              <div className="mt-4 sm:mt-[23px] h-[4px] w-full bg-[#1A2438] lg:ml-10" />
             </div>
 
             {/* Leakage Rate */}
@@ -71,7 +71,7 @@ export default function ROISection() {
                 <span className="font-semibold text-[#FFFFFF]">3%</span>
               </p>
 
-              <div className="mt-4 sm:mt-[23px] h-[4px] w-full bg-[#1A2438]" />
+              <div className="mt-4 sm:mt-[23px] h-[4px] w-full bg-[#1A2438] lg:ml-10" />
             </div>
           </div>
 

@@ -11,7 +11,7 @@ export default function IntegrationBar() {
             </span>
           </div>
 
-          <div className="min-w-0 flex-1 overflow-hidden">
+          <div className="integration-marquee-window min-w-0 flex-1 overflow-hidden">
             <div className="flex w-max animate-[integrations-marquee_36s_linear_infinite] hover:[animation-play-state:paused] motion-reduce:animate-none">
               {[0, 1].map((copy) => (
                 <div
