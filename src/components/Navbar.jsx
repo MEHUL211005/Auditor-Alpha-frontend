@@ -8,7 +8,7 @@ export default function Navbar() {
 
   return (
     <header className="w-full bg-[#08090D] border-b border-gray-800/60 sticky top-0 z-50">
-      <div className="max-w-[1200px] w-full h-[56px] px-4 sm:px-6 mx-auto flex items-center justify-between">
+      <div className="w-full h-[56px] px-4 sm:px-6 flex items-center">
         <div className="flex items-center gap-2.5 h-[22px]">
           <img src={Container} alt="Logo" className="w-[22px] h-[22px] bg-[#00C9A7] rounded-[4px] flex-shrink-0" />
 
@@ -21,7 +21,7 @@ export default function Navbar() {
           </span>
         </div>
 
-        <nav className="hidden lg:flex items-center gap-5 xl:gap-[28px]">
+        <nav className="hidden lg:ml-10 lg:flex items-center gap-5 xl:gap-[28px]">
           {navLinks.map((link) => (
             <a
               key={link.href}
@@ -33,7 +33,7 @@ export default function Navbar() {
           ))}
         </nav>
 
-        <div className="hidden lg:flex items-center gap-[10px]">
+        <div className="hidden lg:ml-auto lg:flex items-center gap-[10px]">
           <a href="#signin" className="font-['Inter'] font-normal text-[14px] leading-[21px] text-gray-300 hover:text-white transition-colors tracking-normal w-[45px] h-[21px] flex items-center justify-center">
             Sign in
           </a>
