@@ -1,5 +1,6 @@
 import { heroDiscrepancies, heroMetrics, heroStats } from '../data/content';
 import ActionButton from '../components/ActionButton';
+import AnimatedNumber from '../components/AnimatedNumber';
 
 export default function HeroSection() {
   return (
@@ -47,7 +48,7 @@ export default function HeroSection() {
                 <div key={stat.value} className="min-w-0 flex-1 h-[71px]">
                   <div className="h-[33px]">
                     <span className="font-['Inter'] font-extrabold text-[19px] sm:text-[22px] leading-[33px] tracking-[0px] text-[#00C9A7] block">
-                      {stat.value}
+                      <AnimatedNumber value={stat.value} />
                     </span>
                   </div>
                   <div className="h-[38px] pt-[2px]">
@@ -60,7 +61,7 @@ export default function HeroSection() {
             </div>
           </div>
 
-          <div className="w-full max-w-[461px] rounded-[12px] border border-[#1A2438] bg-[#0D1421] shadow-[0px_0px_0px_1px_rgba(0,201,167,0.08),0px_24px_80px_0px_rgba(0,0,0,0.6)] flex flex-col overflow-hidden">
+          <div className="-mx-4 w-[calc(100%+2rem)] max-w-none rounded-[12px] border border-[#1A2438] bg-[#0D1421] shadow-[0px_0px_0px_1px_rgba(0,201,167,0.08),0px_24px_80px_0px_rgba(0,0,0,0.6)] flex flex-col overflow-hidden sm:mx-0 sm:w-full xl:max-w-[461px]">
             <div className="w-full h-[47px] shrink-0 flex items-center gap-[6px] border-b border-[#1A2438] pt-[14px] pr-[18px] pb-[14px] pl-[18px]">
               <span className="w-3 h-3 rounded-full bg-red-500/80"></span>
               <span className="w-3 h-3 rounded-full bg-yellow-500/80"></span>
@@ -72,21 +73,21 @@ export default function HeroSection() {
               </div>
             </div>
 
-            <div className="flex-1 min-w-0 p-3 sm:pt-[18px] sm:px-[18px] sm:pb-[12px]">
-              <div className="w-full min-h-[63.5px] grid grid-cols-2 sm:grid-cols-4 gap-1">
+            <div className="flex-1 min-w-0 p-3 min-[480px]:pt-[18px] min-[480px]:px-[18px] min-[480px]:pb-[12px]">
+              <div className="w-full min-h-[63.5px] grid grid-cols-2 min-[480px]:grid-cols-4 gap-1">
                 {heroMetrics.map((metric) => (
                   <div
                     key={metric.label}
-                    className="min-w-0 min-h-[63.5px] rounded-[8px] border border-[#1A2438] bg-[#0A0F1C] p-2 sm:pt-[10px] sm:px-[12px] sm:pb-[10px]"
+                    className="min-w-0 min-h-[63.5px] rounded-[8px] border border-[#1A2438] bg-[#0A0F1C] p-2 min-[480px]:pt-[10px] min-[480px]:px-[12px] min-[480px]:pb-[10px]"
                   >
                     <div className="h-[15px]">
-                      <span className="font-['Inter'] font-normal text-[9px] sm:text-[10px] leading-[15px] tracking-[0px] text-[#6677AA] block truncate">
+                      <span className="font-['Inter'] font-normal text-[9px] min-[480px]:text-[10px] leading-[15px] tracking-[0px] text-[#6677AA] block truncate">
                         {metric.label}
                       </span>
                     </div>
                     <div className="h-[27px] pt-[4px]">
-                      <span className={`font-['Inter'] font-bold text-[13px] sm:text-[15px] leading-[22.5px] tracking-[0px] ${metric.valueClass}`}>
-                        {metric.value}
+                      <span className={`font-['Inter'] font-bold text-[13px] min-[480px]:text-[15px] leading-[22.5px] tracking-[0px] ${metric.valueClass}`}>
+                        <AnimatedNumber value={metric.value} />
                       </span>
                     </div>
                   </div>
@@ -103,15 +104,17 @@ export default function HeroSection() {
                 {heroDiscrepancies.map((row) => (
                   <div
                     key={row.name}
-                    className="w-full min-h-[36px] rounded-[6px] border border-[#1A2438] grid grid-cols-[minmax(0,1.4fr)_repeat(3,minmax(0,1fr))_6px] gap-x-1 sm:gap-x-2 items-center pl-2"
+                    className={`w-full min-h-[36px] rounded-[6px] border border-[#1A2438] grid grid-cols-[minmax(0,1.4fr)_repeat(3,minmax(0,1fr))_6px] gap-x-1 min-[480px]:gap-x-2 items-center pl-2 pr-[10px] ${
+                      row.negative ? 'bg-[#FF6B6B0D]' : 'bg-[#00C9A708]'
+                    }`}
                   >
-                    <span className="font-['Inter'] font-normal text-[10px] sm:text-[12px] leading-[18px] tracking-[0px] text-[#CCCCDD] truncate">
+                    <span className="font-['Inter'] font-normal text-[10px] min-[480px]:text-[12px] leading-[18px] tracking-[0px] text-[#CCCCDD] truncate">
                       {row.name}
                     </span>
-                    <span className="font-['Inter'] font-normal text-[10px] sm:text-[12px] leading-[18px] tracking-[0px] text-[#8899AA] truncate">
+                    <span className="font-['Inter'] font-normal text-[10px] min-[480px]:text-[12px] leading-[18px] tracking-[0px] text-[#8899AA] truncate">
                       {row.crm}
                     </span>
-                    <span className="font-['Inter'] font-normal text-[10px] sm:text-[12px] leading-[18px] tracking-[0px] text-[#8899AA] truncate">
+                    <span className="font-['Inter'] font-normal text-[10px] min-[480px]:text-[12px] leading-[18px] tracking-[0px] text-[#8899AA] truncate">
                       {row.ledger}
                     </span>
                     <span

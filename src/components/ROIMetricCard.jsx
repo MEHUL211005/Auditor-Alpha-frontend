@@ -1,3 +1,5 @@
+import AnimatedNumber from './AnimatedNumber';
+
 export default function ROIMetricCard({
   label,
   value,
@@ -27,7 +29,7 @@ export default function ROIMetricCard({
         <p
           className={`font-['Inter'] font-bold text-[21px] leading-[26px] text-center ${valueColors[valueColor]}`}
         >
-          {value}
+          <AnimatedNumber value={value} />
         </p>
         <p className="font-['Inter'] font-medium text-[11.5px] leading-[16px] text-[#6677AA] text-center">
           {label}
@@ -47,7 +49,7 @@ export default function ROIMetricCard({
       <p
         className={`mt-[18px] font-['Inter'] font-extrabold text-[42px] leading-[50px] text-center ${valueColors[valueColor]}`}
       >
-        {value}
+        <AnimatedNumber value={value} />
       </p>
 
       {description && (
